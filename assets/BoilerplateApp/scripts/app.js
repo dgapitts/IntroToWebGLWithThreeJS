@@ -38,13 +38,31 @@ var demo = (function(){
 
             scene.add(box);
 
+            //Move the camera closer to the cube
+            camera.position.z=50;
+            //Move the camera to the left of the cube
+            camera.position.x=-20;
+            //Move the cube to the right and further away
+            camera.position.x=+20;
+            camera.position.z=300;
+            //Make the camera look down on the cube
+            camera.position.y=+20;
+            //camera.lookAt(new THREE.Vector3(0,20,0));
+            //Animate the camera so it gradually moves closer to the cube 
+
+
             requestAnimationFrame(render);
 
+            
+
+
+            requestAnimationFrame(render);
         };
 
         function render() {
                 renderer.render(scene, camera); 
                 requestAnimationFrame(render);
+                camera.position.z--;
         };
        
         window.onload = initScene;
